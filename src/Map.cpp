@@ -55,7 +55,7 @@ void Map::setMapIndex( const char* map_filename )
 
 	do{
 		fgets(current_str,sizeof(current_str),map_file);
-		printf("%s",current_str);
+		//printf("%s",current_str);
 		to_free = strdup(current_str);
 		tok = to_free;
 		end = to_free;
