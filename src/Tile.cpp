@@ -12,15 +12,10 @@ Tile::Tile()
 
 }
 
-
-// Tile::Tile(sf::Texture text,int pos_x, int pos_y)
-// {
-// 	m_tile_texture   = text;
-// 	m_position_x     = pos_x;
-// 	m_position_y     = pos_y;
-// 	m_collision_type = 0;
-// }
-
+sf::Texture Tile::getTexture()
+{
+	return m_tile_texture;
+}
 
 void Tile::setTexture(const char* filename)
 {

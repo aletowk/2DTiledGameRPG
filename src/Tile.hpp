@@ -14,16 +14,17 @@ class Tile
 public:
 	Tile();
 	Tile(int pos_x, int pos_y);
-	// Tile(sf::Texture text,int pos_x, int pos_y);
 	~Tile();
-	void setTexture(const char* filename);
 
-	void setSprite(	int map_pos_x, int map_pos_y,  
-					int texture_offset_x, int texture_offset_y);
 
-	void setPosition();
-	void drawTile(sf::RenderWindow & window_to_draw);
-	sf::Sprite getSprite();
+	void 		setTexture(const char* filename);
+
+	void 		setSprite(	int map_pos_x, int map_pos_y,  
+							int texture_offset_x, int texture_offset_y);
+
+	void 		drawTile(sf::RenderWindow & window_to_draw);
+	sf::Sprite 	getSprite();
+	sf::Texture getTexture();
 
 private:
 	sf::Texture   	m_tile_texture;

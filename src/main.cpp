@@ -22,7 +22,7 @@ int main()
 {
     // setup window
     sf::Vector2i screenDimensions(640,480);
-    sf::RenderWindow window(sf::VideoMode(screenDimensions.x, screenDimensions.y), "Animations!");
+    sf::RenderWindow window(sf::VideoMode(screenDimensions.x, screenDimensions.y), "First 2D Game!");
     window.setFramerateLimit(60);
 
     // load texture (spritesheet)
