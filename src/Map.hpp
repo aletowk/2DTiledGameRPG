@@ -4,25 +4,29 @@
 #include "Tile.hpp"
 #include <iostream>
 #include <cstring>
+#include <cstdlib>
 
-#define MAP_HEIGHT 	15
-#define MAP_WIDTH 	15
+#include <vector>
 
 class Map
 {
 public:
 	Map();
+	Map(unsigned int map_height, unsigned int map_width,unsigned int tile_size);
 	~Map();
 
-	void setMapIndex(const char* map_filename);
+	void setMapIndex( const char* map_filename);
 
 	void setMapTile(const char* tileset_filename);
 
 	void drawMap( sf::RenderWindow & window_to_draw);
 
 private:
-	Tile 	m_tile_array[MAP_WIDTH*MAP_HEIGHT];
-	int 	m_tile_array_index[MAP_WIDTH*MAP_HEIGHT];
+	unsigned int 		m_map_width;
+	unsigned int 		m_map_height;
+	unsigned int  		m_tile_size;
+	std::vector<Tile> 	m_tile_array;
+	std::vector<int> 	m_tile_array_index;
 };
 
 

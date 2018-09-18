@@ -1,15 +1,21 @@
 #include "Tile.hpp"
 
-Tile::Tile(int pos_x, int pos_y)
+Tile::Tile()
 {
+
+}
+
+Tile::Tile(unsigned char tile_size,int pos_x, int pos_y)
+{
+	m_tile_size = tile_size;
 	m_position_x     = pos_x;
 	m_position_y     = pos_y;
 	m_collision_type = 0;
 }
 
-Tile::Tile()
+Tile::Tile(unsigned char tile_size)
 {
-
+	m_tile_size = tile_size;
 }
 
 sf::Texture Tile::getTexture()
@@ -20,7 +26,10 @@ sf::Texture Tile::getTexture()
 void Tile::setTexture(const char* filename)
 {
 	sf::Texture text;
-	text.loadFromFile(filename);
+	bool load_texture;
+	load_texture = text.loadFromFile(filename);
+	if(!load_texture)
+		printf("Error: can not laod texture %s\n",filename);
 	m_tile_texture = text;
 }
 
@@ -29,10 +38,11 @@ void Tile::setSprite(int map_pos_x, int map_pos_y,
 {
 	sf::Sprite sprite;
 	sprite.setTexture(m_tile_texture);
-	sprite.setTextureRect( sf::IntRect( texture_offset_x*TILE_SIZE,
-										texture_offset_y*TILE_SIZE,
-										TILE_SIZE,
-										TILE_SIZE) );
+	sprite.setTextureRect( sf::IntRect( texture_offset_x*m_tile_size,
+										texture_offset_y*m_tile_size,
+										m_tile_size,
+										m_tile_size) );
+	// printf("Texture Rect :: %d %d %d %d\n",texture_offset_x*m_tile_size,texture_offset_y*m_tile_size,m_tile_size,m_tile_size);
 	sprite.setPosition( map_pos_x,map_pos_y );
 	m_sprite = sprite;
 }

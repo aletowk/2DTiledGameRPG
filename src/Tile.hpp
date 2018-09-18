@@ -13,7 +13,8 @@ class Tile
 {
 public:
 	Tile();
-	Tile(int pos_x, int pos_y);
+	Tile(unsigned char tile_size);
+	Tile(unsigned char tile_size,int pos_x, int pos_y);
 	~Tile();
 
 
@@ -29,6 +30,8 @@ public:
 private:
 	sf::Texture   	m_tile_texture;
 	sf::Sprite 		m_sprite;
+
+	unsigned char m_tile_size;
 
 	int 	m_position_x;
 	int 	m_position_y;
