@@ -17,6 +17,9 @@ public:
 
 	void setMapIndex( const char* map_filename);
 
+	void drawMap_sprite(sf::RenderWindow & window_to_draw,const char* tileset_filename);
+
+
 	void setMapTile(const char* tileset_filename);
 
 	void drawMap( sf::RenderWindow & window_to_draw);

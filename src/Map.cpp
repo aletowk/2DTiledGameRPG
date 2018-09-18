@@ -39,6 +39,103 @@ void Map::setMapTile(const char* tileset_filename)
 	}	
 }
 
+void Map::drawMap_sprite(sf::RenderWindow & window_to_draw,const char* tileset_filename)
+{
+	sf::Texture texture;
+	sf::Sprite  main_sprite;
+
+	unsigned int i      = 0;
+	unsigned int j      = 0;
+	int x_offset_in_pix = 0;
+	int y_offset_in_pix = 0;
+
+
+	texture.loadFromFile(tileset_filename);
+	main_sprite.setTexture(texture);
+	// printf("\n==========\n");
+	
+	// for( i = 0; i  < m_map_width ;i++){
+
+	// 	for(j = 0 ; j < m_map_height; j ++){
+
+	// 		if(m_tile_array_index[i+j*m_map_width] == -1){
+	// 			main_sprite.setTextureRect( sf::IntRect( 0*m_tile_size,
+	// 									0*m_tile_size,
+	// 									0,
+	// 									0) );
+	// 			main_sprite.setPosition(0,0);
+	// 		}else{
+	// 			x_offset_in_pix = (int) m_tile_array_index[i+j*m_map_width]%(texture.getSize().x / (m_tile_size));
+	// 			y_offset_in_pix = (int) m_tile_array_index[i+j*m_map_width]/(texture.getSize().y / (m_tile_size));
+
+
+	// 		// if( y_offset_in_pix > 500){
+	// 		// 	printf("\n\nExceed in %d\n\n",m_tile_array_index[i]);
+	// 		// 	printf("\n\nExceed in %d,%d\n\n",(texture.getSize().x )/m_tile_size,(texture.getSize().y)/m_tile_size);
+	// 		// 	printf("\n\nExceed in %d,%d\n\n",(i%m_map_width),(i/m_map_height));
+	// 		// }
+
+
+	// 			main_sprite.setTextureRect( sf::IntRect( 	(x_offset_in_pix)*(m_tile_size),
+	// 													 	(y_offset_in_pix-1)*(m_tile_size),
+	// 														m_tile_size,
+	// 														m_tile_size) );
+
+	// 			// printf("\npos %d,%d\n",(i%m_map_width),(i/m_map_height));
+	// 			main_sprite.setPosition( i*(m_tile_size),j*(m_tile_size) );
+	// 		}
+	// 		// if(i % m_map_width == 0 )
+	// 		// 	printf("--\n");
+	// 		// printf("%d,%d \n",x_offset_in_pix,y_offset_in_pix);
+	// 		window_to_draw.draw(main_sprite);
+
+
+			
+	// 	}
+
+	// }
+
+
+	
+
+
+	for( i = 0 ; i  < m_map_width*m_map_height ; i++)
+	{
+		
+
+		if(m_tile_array_index[i] == -1){
+			main_sprite.setTextureRect( sf::IntRect( 0*m_tile_size,
+										0*m_tile_size,
+										0,
+										0) );
+			main_sprite.setPosition(0,0);
+		}else{
+			x_offset_in_pix = (int) m_tile_array_index[i]%(texture.getSize().x / (m_tile_size));
+			y_offset_in_pix = (int) m_tile_array_index[i]/(texture.getSize().y / (m_tile_size));
+
+
+			// if( y_offset_in_pix > 500){
+			// 	printf("\n\nExceed in %d\n\n",m_tile_array_index[i]);
+			// 	printf("\n\nExceed in %d,%d\n\n",(texture.getSize().x )/m_tile_size,(texture.getSize().y)/m_tile_size);
+			// 	printf("\n\nExceed in %d,%d\n\n",(i%m_map_width),(i/m_map_height));
+			// }
+
+
+			main_sprite.setTextureRect( sf::IntRect( (x_offset_in_pix)*(m_tile_size),
+										(y_offset_in_pix)*(m_tile_size),
+										m_tile_size,
+										m_tile_size) );
+				printf("\npos %d,%d\n",(i%m_map_width),(i/m_map_height));
+			main_sprite.setPosition( (i%(m_map_width))*(m_tile_size),(i/(m_map_height))*(m_tile_size) );
+		}
+		if(i % m_map_width == 0 )
+			printf("--\n");
+		printf("%d,%d \n",x_offset_in_pix,y_offset_in_pix);
+		window_to_draw.draw(main_sprite);
+	}
+
+}
+
 void Map::drawMap( sf::RenderWindow & window_to_draw)
 {
 	int i = 0;

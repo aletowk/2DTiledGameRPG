@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="1">
+ <tileset firstgid="1" name="background_T" tilewidth="32" tileheight="32" tilecount="256" columns="16">
+  <image source="../Tilesets/background_T.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="257" name="Overworld" tilewidth="16" tileheight="16" tilecount="1440" columns="40">
+  <image source="../Tilesets/Overworld.png" width="640" height="576"/>
+ </tileset>
+ <layer name="Assets_2" width="15" height="15">
+  <data encoding="csv">
+132,133,132,133,0,0,0,0,0,0,0,0,0,0,0,
+132,133,132,133,0,0,0,0,0,0,0,0,0,0,0,
+132,133,132,133,0,0,0,0,0,0,0,0,0,0,0,
+132,133,132,133,0,0,0,0,0,0,0,0,0,0,0,
+132,133,132,133,0,0,0,0,0,0,0,0,0,0,0,
+0,132,133,0,0,0,0,0,0,0,81,82,83,0,0,
+0,132,133,0,0,81,82,83,0,0,97,98,99,0,0,
+0,132,133,0,0,97,98,99,0,0,113,114,115,0,0,
+0,132,133,0,0,113,114,115,0,0,0,0,0,0,0,
+0,132,133,0,0,0,0,0,0,0,0,0,0,0,0,
+0,132,133,0,73,74,75,0,0,0,81,82,83,0,0,
+0,132,133,0,89,90,91,0,0,0,97,98,99,0,0,
+0,0,0,0,105,106,107,0,0,0,113,114,115,0,0,
+0,0,0,0,121,122,123,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+</map>

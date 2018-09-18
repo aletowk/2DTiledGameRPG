@@ -35,17 +35,30 @@ int main()
 
 
     Map background(15,15,32);
+    Map background2(15,15,32);
     // Map background_1(50,50,16);
     // Map background_2(50,50,16);
     background.setMapIndex("./Map_Drawing/map15x15_0.csv");
-    background.setMapTile("./Tilesets/background_T.png");
+    background2.setMapIndex("./Map_Drawing/assets2_32x32.csv");
+
+
+    // Map background_layer(10,10,16);
+    // Map houses_layer(10,10,16);
+    // Map assets_layer(10,10,16);
+    // Map trees_layer(10,10,16);
+
+
+    // background_layer.setMapIndex("./Map_Drawing/MyMap0_BackgroundLayer.csv");
+    // houses_layer.setMapIndex("./Map_Drawing/MyMap0_HousesLayer.csv");
+    // assets_layer.setMapIndex("./Map_Drawing/MyMap0_AssetsLayer.csv");
+    // trees_layer.setMapIndex("./Map_Drawing/MyMap0_TreesLayer1.csv");
 
     // background_1.setMapIndex("./Map_Drawing/map1_toprint_MainLayer.csv");
-    // background_1.setMapTile("./Tilesets/Overworld.png");
+    // // background_1.setMapTile("./Tilesets/Overworld.png");
 
 
     // background_2.setMapIndex("./Map_Drawing/map1_toprint_Houses.csv");
-    // background_2.setMapTile("./Tilesets/Overworld.png");
+    // // background_2.setMapTile("./Tilesets/Overworld.png");
 
 
     while (window.isOpen())
@@ -62,7 +75,17 @@ int main()
        
         // draw
         window.clear();
-        background.drawMap(window);
+
+        // background_layer.drawMap_sprite(window,"./Tilesets/Overworld.png");
+        // houses_layer.drawMap_sprite(window,"./Tilesets/Overworld.png");
+        // assets_layer.drawMap_sprite(window,"./Tilesets/Overworld.png");
+        // trees_layer.drawMap_sprite(window,"./Tilesets/Overworld.png");
+
+        background.drawMap_sprite(window,"./Tilesets/background_T.png");
+        background2.drawMap_sprite(window,"./Tilesets/background_T.png");
+        // background_1.drawMap_sprite(window,"./Tilesets/Overworld.png");
+        // background_2.drawMap_sprite(window,"./Tilesets/Overworld.png");
+        // background.drawMap(window);
         // background_1.drawMap(window);
         // background_2.drawMap(window);
 
